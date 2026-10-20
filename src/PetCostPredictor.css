@@ -1,0 +1,902 @@
+.pet-cost-page {
+  min-height: 100vh;
+  padding: 0 24px 60px;
+  background: #faf8ff;
+  color: #24213a;
+  font-family: inherit;
+}
+
+.pet-cost-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pet-cost-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+}
+
+.pet-cost-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #5321a8;
+  font-size: 25px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.pet-cost-logo-icon {
+  font-size: 30px;
+}
+
+.pet-cost-home-link {
+  color: #5b4c79;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pet-cost-home-link:hover {
+  color: #7c3aed;
+}
+
+.pet-cost-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 365px;
+  padding: 42px 55px;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(255, 255, 255, 0.8),
+      transparent 28%
+    ),
+    linear-gradient(125deg, #eee5ff 0%, #f7eeff 52%, #fcefe4 100%);
+}
+
+.pet-cost-eyebrow {
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.pet-cost-hero h1 {
+  margin: 14px 0;
+  color: #252039;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 850;
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+}
+
+.pet-cost-hero h1 span {
+  color: #7c3aed;
+}
+
+.pet-cost-hero-content > p {
+  max-width: 510px;
+  margin-bottom: 28px;
+  color: #625b74;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.pet-cost-primary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 21px;
+  border-radius: 11px;
+  background: #6d28d9;
+  color: white;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pet-cost-primary-link:hover {
+  transform: translateY(-2px);
+  background: #5b21b6;
+}
+
+.pet-cost-primary-link span {
+  font-size: 20px;
+}
+
+.pet-cost-hero-illustration {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.pet-cost-hero-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(124, 58, 237, 0.13);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 20px 70px rgba(91, 33, 182, 0.1);
+}
+
+.pet-cost-hero-emoji {
+  font-size: 120px;
+  line-height: 1;
+}
+
+.pet-cost-floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(41, 26, 79, 0.09);
+}
+
+.pet-cost-floating-card > span {
+  font-size: 27px;
+}
+
+.pet-cost-floating-card strong,
+.pet-cost-floating-card small {
+  display: block;
+}
+
+.pet-cost-floating-card strong {
+  color: #2d2441;
+  font-size: 12px;
+}
+
+.pet-cost-floating-card small {
+  margin-top: 4px;
+  color: #81788f;
+  font-size: 10px;
+}
+
+.pet-cost-float-top {
+  top: 4px;
+  right: -6px;
+}
+
+.pet-cost-float-bottom {
+  bottom: 5px;
+  left: -10px;
+}
+
+.pet-cost-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin: 23px 0;
+  padding: 16px 20px;
+  border: 1px solid #f1dfb7;
+  border-radius: 13px;
+  background: #fffaf0;
+}
+
+.pet-cost-disclaimer > span {
+  font-size: 22px;
+}
+
+.pet-cost-disclaimer p {
+  margin: 0;
+  color: #765d31;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.pet-cost-calculator-card,
+.pet-cost-results {
+  margin-top: 24px;
+  padding: 35px;
+  border: 1px solid #ece8f5;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 10px 35px rgba(45, 31, 78, 0.04);
+}
+
+.pet-cost-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.pet-cost-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 53px;
+  height: 53px;
+  border-radius: 15px;
+  background: #f1e8ff;
+  font-size: 25px;
+}
+
+.pet-cost-section-heading h2,
+.pet-cost-results-heading h2 {
+  margin: 0;
+  color: #29223e;
+  font-size: 24px;
+  font-weight: 820;
+  letter-spacing: -0.5px;
+}
+
+.pet-cost-section-heading p,
+.pet-cost-results-heading p {
+  margin: 6px 0 0;
+  color: #807890;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pet-cost-form-section {
+  margin-top: 31px;
+  padding-top: 26px;
+  border-top: 1px solid #eeeaf5;
+}
+
+.pet-cost-form-section > h3,
+.pet-cost-expense-heading h3 {
+  margin: 0;
+  color: #302641;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.pet-cost-pet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.pet-cost-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pet-cost-field > span {
+  color: #3f3651;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.pet-cost-field input,
+.pet-cost-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #ded8eb;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #29223e;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pet-cost-field input:focus,
+.pet-cost-field select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.pet-cost-field small {
+  color: #91889f;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.pet-cost-expense-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.pet-cost-expense-heading p {
+  margin: 7px 0 0;
+  color: #81788f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.pet-cost-expense-heading > span {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: #f2eaff;
+  color: #7135ca;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.8px;
+}
+
+.pet-cost-expense-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 19px;
+}
+
+.pet-cost-expense-field {
+  display: grid;
+  grid-template-columns: 37px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid #eeeaf6;
+  border-radius: 13px;
+  background: #fdfcff;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.pet-cost-expense-field:focus-within {
+  border-color: #c4b5fd;
+  background: #faf7ff;
+}
+
+.pet-cost-expense-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 11px;
+  background: #f0e8ff;
+  font-size: 19px;
+}
+
+.pet-cost-expense-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.pet-cost-expense-copy strong {
+  color: #352b48;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pet-cost-expense-copy small {
+  color: #8a8198;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.pet-cost-input-wrap {
+  display: flex;
+  grid-column: 2;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  margin-top: 4px;
+  padding: 0 11px;
+  border: 1px solid #e2dbea;
+  border-radius: 8px;
+  background: white;
+}
+
+.pet-cost-input-wrap > span {
+  color: #8a8198;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.pet-cost-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 7px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #322645;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.pet-cost-input-wrap input:focus {
+  outline: none;
+}
+
+.pet-cost-form-actions,
+.pet-cost-result-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 13px;
+  margin-top: 32px;
+}
+
+.pet-cost-reset-button,
+.pet-cost-calculate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 47px;
+  padding: 12px 19px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.pet-cost-reset-button {
+  border: 1px solid #ded5ed;
+  background: white;
+  color: #5e4a7b;
+}
+
+.pet-cost-reset-button:hover {
+  background: #f6f2fc;
+}
+
+.pet-cost-calculate-button {
+  border: 1px solid #6d28d9;
+  background: #6d28d9;
+  color: white;
+}
+
+.pet-cost-calculate-button:hover {
+  transform: translateY(-1px);
+  background: #5b21b6;
+}
+
+.pet-cost-results {
+  scroll-margin-top: 24px;
+}
+
+.pet-cost-results-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pet-cost-results-heading h2 {
+  margin-top: 7px;
+}
+
+.pet-cost-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 28px;
+}
+
+.pet-cost-summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #ece7f4;
+  border-radius: 16px;
+  background: #fdfcff;
+}
+
+.pet-cost-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: #f0e8ff;
+  font-size: 20px;
+}
+
+.pet-cost-summary-label {
+  margin-top: 4px;
+  color: #7e748e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pet-cost-summary-card > strong {
+  color: #2a203d;
+  font-size: clamp(23px, 3vw, 31px);
+  font-weight: 850;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+
+.pet-cost-summary-card > small {
+  color: #91879f;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.pet-cost-summary-highlight {
+  border-color: #d8c3ff;
+  background: linear-gradient(135deg, #f5efff, #ffffff);
+}
+
+.pet-cost-summary-year {
+  border-color: #c6e8d6;
+  background: linear-gradient(135deg, #edfff5, #ffffff);
+}
+
+.pet-cost-budget-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 23px;
+  padding: 20px;
+  border-radius: 13px;
+}
+
+.pet-cost-budget-good {
+  border: 1px solid #b8e6cd;
+  background: #f0fdf5;
+  color: #166534;
+}
+
+.pet-cost-budget-warning {
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.pet-cost-budget-status-icon {
+  font-size: 26px;
+}
+
+.pet-cost-budget-status h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pet-cost-budget-status p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.pet-cost-breakdown {
+  margin-top: 27px;
+  padding: 22px;
+  border: 1px solid #ece8f3;
+  border-radius: 16px;
+}
+
+.pet-cost-breakdown-heading h3 {
+  margin: 0;
+  color: #302641;
+  font-size: 17px;
+}
+
+.pet-cost-breakdown-heading p {
+  margin: 6px 0 0;
+  color: #898094;
+  font-size: 12px;
+}
+
+.pet-cost-breakdown-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.9fr) minmax(60px, 1fr) auto;
+  align-items: center;
+  gap: 17px;
+  margin-top: 22px;
+}
+
+.pet-cost-breakdown-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.pet-cost-breakdown-label > span {
+  font-size: 19px;
+}
+
+.pet-cost-breakdown-label strong {
+  color: #514660;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.pet-cost-bar-track {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #eee9f7;
+}
+
+.pet-cost-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #a78bfa, #7c3aed);
+  transition: width 0.3s ease;
+}
+
+.pet-cost-breakdown-amount {
+  color: #332843;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pet-cost-breakdown-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 24px;
+  padding-top: 17px;
+  border-top: 1px solid #eae5f1;
+  color: #352645;
+  font-size: 13px;
+}
+
+.pet-cost-result-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 22px;
+  padding: 17px;
+  border: 1px solid #e6d5ff;
+  border-radius: 12px;
+  background: #faf5ff;
+}
+
+.pet-cost-result-note > span {
+  font-size: 22px;
+}
+
+.pet-cost-result-note p {
+  margin: 0;
+  color: #6b547d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.pet-cost-footer {
+  padding: 35px 15px 10px;
+  text-align: center;
+}
+
+.pet-cost-footer > span {
+  font-size: 25px;
+}
+
+.pet-cost-footer p {
+  margin: 10px 0;
+  color: #58476f;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.pet-cost-footer small {
+  color: #948aa1;
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+  .pet-cost-hero {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 35px;
+  }
+
+  .pet-cost-hero-illustration {
+    min-height: 235px;
+  }
+
+  .pet-cost-hero-circle {
+    width: 190px;
+    height: 190px;
+  }
+
+  .pet-cost-hero-emoji {
+    font-size: 95px;
+  }
+
+  .pet-cost-float-top {
+    right: 5%;
+  }
+
+  .pet-cost-float-bottom {
+    left: 5%;
+  }
+}
+
+@media (max-width: 650px) {
+  .pet-cost-page {
+    padding: 0 13px 35px;
+  }
+
+  .pet-cost-header {
+    padding: 18px 2px;
+  }
+
+  .pet-cost-logo {
+    font-size: 21px;
+  }
+
+  .pet-cost-home-link {
+    font-size: 12px;
+  }
+
+  .pet-cost-hero {
+    padding: 27px 22px;
+    border-radius: 20px;
+  }
+
+  .pet-cost-hero h1 {
+    font-size: 38px;
+  }
+
+  .pet-cost-hero-content > p {
+    font-size: 13px;
+  }
+
+  .pet-cost-hero-illustration {
+    min-height: 215px;
+  }
+
+  .pet-cost-hero-circle {
+    width: 175px;
+    height: 175px;
+  }
+
+  .pet-cost-hero-emoji {
+    font-size: 85px;
+  }
+
+  .pet-cost-floating-card {
+    padding: 10px;
+  }
+
+  .pet-cost-floating-card > span {
+    font-size: 22px;
+  }
+
+  .pet-cost-floating-card strong {
+    font-size: 10px;
+  }
+
+  .pet-cost-disclaimer {
+    padding: 13px;
+  }
+
+  .pet-cost-disclaimer p {
+    font-size: 11px;
+  }
+
+  .pet-cost-calculator-card,
+  .pet-cost-results {
+    padding: 21px 15px;
+    border-radius: 16px;
+  }
+
+  .pet-cost-section-heading h2,
+  .pet-cost-results-heading h2 {
+    font-size: 20px;
+  }
+
+  .pet-cost-pet-grid,
+  .pet-cost-expense-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-cost-expense-field {
+    padding: 14px;
+  }
+
+  .pet-cost-form-actions,
+  .pet-cost-result-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .pet-cost-reset-button,
+  .pet-cost-calculate-button {
+    width: 100%;
+  }
+
+  .pet-cost-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pet-cost-breakdown {
+    padding: 14px;
+  }
+
+  .pet-cost-breakdown-row {
+    grid-template-columns: minmax(95px, 1fr) minmax(45px, 0.6fr) auto;
+    gap: 8px;
+  }
+
+  .pet-cost-breakdown-label {
+    gap: 5px;
+  }
+
+  .pet-cost-breakdown-label strong,
+  .pet-cost-breakdown-amount {
+    font-size: 10px;
+  }
+
+  .pet-cost-budget-status {
+    padding: 14px;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+
+  .pet-cost-page {
+    padding: 0;
+    background: white;
+  }
+
+  .pet-cost-container {
+    max-width: none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .pet-cost-hero {
+    min-height: auto;
+    padding: 20px;
+    background: white !important;
+    border: 1px solid #ddd;
+  }
+
+  .pet-cost-hero-illustration {
+    display: none;
+  }
+
+  .pet-cost-calculator-card,
+  .pet-cost-results {
+    padding: 20px;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .pet-cost-summary-card,
+  .pet-cost-budget-status,
+  .pet-cost-result-note {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .pet-cost-footer {
+    padding-bottom: 0;
+  }
+}

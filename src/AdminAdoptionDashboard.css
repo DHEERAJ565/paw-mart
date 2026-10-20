@@ -1,0 +1,1375 @@
+/* ========================================
+   PAWMART ADMIN DASHBOARD
+======================================== */
+
+.paw-admin-page {
+  --admin-purple: #7356d8;
+  --admin-purple-dark: #5b3db8;
+  --admin-purple-light: #f1edff;
+  --admin-ink: #25233a;
+  --admin-muted: #85849a;
+  --admin-border: #eae9f1;
+  --admin-bg: #f7f7fb;
+
+  min-height: 100vh;
+  display: flex;
+  color: var(--admin-ink);
+  background: var(--admin-bg);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.paw-admin-page * {
+  box-sizing: border-box;
+}
+
+.paw-admin-page button,
+.paw-admin-page input,
+.paw-admin-page select {
+  font: inherit;
+}
+
+.paw-admin-page button {
+  cursor: pointer;
+}
+
+.paw-admin-page button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paw-admin-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.paw-admin-sidebar {
+  width: 255px;
+  flex: 0 0 255px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 17px 20px;
+  background: #ffffff;
+  border-right: 1px solid var(--admin-border);
+}
+
+.paw-admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 36px;
+}
+
+.paw-admin-brand-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: linear-gradient(145deg, #9478f4, #6245c4);
+  box-shadow: 0 6px 16px rgba(103, 77, 204, 0.2);
+}
+
+.paw-admin-brand strong {
+  display: block;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.paw-admin-brand small {
+  display: block;
+  margin-top: 3px;
+  color: var(--admin-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.paw-admin-sidebar-label {
+  padding: 0 12px;
+  margin-bottom: 12px;
+  color: #a1a0b2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.paw-admin-sidebar-link {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5px;
+  padding: 0 13px;
+  color: #77768c;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 650;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.paw-admin-sidebar-link:hover {
+  color: var(--admin-purple);
+  background: #f8f6ff;
+}
+
+.paw-admin-sidebar-link.active {
+  color: var(--admin-purple-dark);
+  background: var(--admin-purple-light);
+}
+
+.paw-admin-sidebar-divider {
+  height: 1px;
+  margin: 24px 8px;
+  background: var(--admin-border);
+}
+
+.paw-admin-sidebar-bottom {
+  margin-top: auto;
+}
+
+.paw-admin-security {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 30px;
+  padding: 15px 12px;
+  border: 1px solid #e7e1ff;
+  border-radius: 12px;
+  color: var(--admin-purple);
+  background: #faf8ff;
+}
+
+.paw-admin-security strong,
+.paw-admin-security span {
+  display: block;
+}
+
+.paw-admin-security strong {
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.paw-admin-security span {
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.paw-admin-back-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 10px;
+  color: #76748a;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.paw-admin-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.paw-admin-topbar {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 38px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.paw-admin-breadcrumb,
+.paw-admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.paw-admin-breadcrumb {
+  color: #9694a9;
+  font-size: 12px;
+}
+
+.paw-admin-breadcrumb strong {
+  color: var(--admin-ink);
+  font-weight: 700;
+}
+
+.paw-admin-topbar-right {
+  gap: 15px;
+}
+
+.paw-admin-secure-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #78768d;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.paw-admin-secure-label svg {
+  color: #478b67;
+}
+
+.paw-admin-avatar {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--admin-purple);
+  background: var(--admin-purple-light);
+}
+
+.paw-admin-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 34px 38px 25px;
+}
+
+.paw-admin-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 29px;
+}
+
+.paw-admin-eyebrow {
+  margin-bottom: 9px;
+  color: var(--admin-purple);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.7px;
+}
+
+.paw-admin-page-heading h1 {
+  margin: 0;
+  color: #25233a;
+  font-size: clamp(27px, 3vw, 35px);
+  font-weight: 800;
+  letter-spacing: -1.1px;
+}
+
+.paw-admin-page-heading p {
+  margin: 10px 0 0;
+  color: var(--admin-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.paw-admin-refresh-button {
+  min-height: 41px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #e1dcf8;
+  border-radius: 10px;
+  color: var(--admin-purple-dark);
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 750;
+  transition: background 0.2s;
+}
+
+.paw-admin-refresh-button:hover {
+  background: #f8f6ff;
+}
+
+.paw-admin-spinning {
+  animation: paw-admin-spin 1s linear infinite;
+}
+
+@keyframes paw-admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   ALERTS
+======================================== */
+
+.paw-admin-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.paw-admin-alert.error {
+  color: #a73946;
+  background: #fff3f3;
+  border-color: #f6d8dc;
+}
+
+.paw-admin-alert.success {
+  align-items: center;
+  color: #267a50;
+  background: #effbf4;
+  border-color: #d3f0de;
+}
+
+.paw-admin-alert > div {
+  flex: 1;
+}
+
+.paw-admin-alert strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.paw-admin-alert p {
+  margin: 0;
+}
+
+.paw-admin-alert > button {
+  border: 0;
+  color: inherit;
+  background: transparent;
+}
+
+.paw-admin-alert-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 800;
+  text-decoration: underline !important;
+}
+
+/* ========================================
+   STATISTICS
+======================================== */
+
+.paw-admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 28px;
+}
+
+.paw-admin-stat-card {
+  min-width: 0;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 21px 19px;
+  background: #ffffff;
+  border: 1px solid var(--admin-border);
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(37, 35, 58, 0.025);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.paw-admin-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 25px rgba(37, 35, 58, 0.055);
+}
+
+.paw-admin-stat-icon {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+}
+
+.paw-admin-stat-icon.purple {
+  color: #7356d8;
+  background: #f0ecff;
+}
+
+.paw-admin-stat-icon.amber {
+  color: #c68a27;
+  background: #fff4dd;
+}
+
+.paw-admin-stat-icon.blue {
+  color: #437fd4;
+  background: #eaf3ff;
+}
+
+.paw-admin-stat-icon.green {
+  color: #31916b;
+  background: #e5f8ee;
+}
+
+.paw-admin-stat-info {
+  min-width: 0;
+}
+
+.paw-admin-stat-info > span {
+  display: block;
+  color: #77758c;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.paw-admin-stat-info > strong {
+  display: block;
+  margin: 7px 0 5px;
+  color: var(--admin-ink);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.paw-admin-stat-info > small {
+  color: #aaa8b9;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   ENQUIRY PANEL
+======================================== */
+
+.paw-admin-panel {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(37, 35, 58, 0.025);
+}
+
+.paw-admin-panel-heading {
+  min-height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 23px 25px;
+}
+
+.paw-admin-panel-heading h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.paw-admin-panel-heading p {
+  margin: 7px 0 0;
+  color: var(--admin-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.paw-admin-total-pill {
+  flex-shrink: 0;
+  padding: 7px 10px;
+  color: #6a51c7;
+  background: #f3efff;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.paw-admin-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 25px 22px;
+}
+
+.paw-admin-search {
+  min-width: 180px;
+  flex: 1;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid #e8e6f0;
+  border-radius: 10px;
+  color: #aaa8bb;
+  background: #ffffff;
+}
+
+.paw-admin-search:focus-within {
+  border-color: #9a85e8;
+  box-shadow: 0 0 0 3px rgba(115, 86, 216, 0.08);
+}
+
+.paw-admin-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  color: var(--admin-ink);
+  background: transparent;
+  font-size: 11px;
+}
+
+.paw-admin-search input::placeholder {
+  color: #aaa8ba;
+}
+
+.paw-admin-filters select {
+  height: 43px;
+  max-width: 160px;
+  padding: 0 11px;
+  border: 1px solid #e8e6f0;
+  border-radius: 10px;
+  outline: 0;
+  color: #656379;
+  background: #ffffff;
+  font-size: 11px;
+}
+
+.paw-admin-search-button,
+.paw-admin-clear-button {
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 750;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.paw-admin-search-button {
+  border: 1px solid var(--admin-purple);
+  color: #ffffff;
+  background: var(--admin-purple);
+}
+
+.paw-admin-search-button:hover {
+  background: var(--admin-purple-dark);
+}
+
+.paw-admin-clear-button {
+  border: 1px solid #e8e6f0;
+  color: #77758b;
+  background: #ffffff;
+}
+
+.paw-admin-clear-button:hover {
+  background: #f7f6fb;
+}
+
+/* ========================================
+   ENQUIRY CARDS
+======================================== */
+
+.paw-admin-enquiry-list {
+  border-top: 1px solid #f0eff5;
+}
+
+.paw-admin-enquiry-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 23px 25px;
+  border-bottom: 1px solid #f0eff5;
+  transition: background 0.2s;
+}
+
+.paw-admin-enquiry-card:last-child {
+  border-bottom: 0;
+}
+
+.paw-admin-enquiry-card:hover {
+  background: #fdfcff;
+}
+
+.paw-admin-enquiry-main {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  flex: 1;
+}
+
+.paw-admin-pet-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #7356d8;
+  background: #f1edff;
+}
+
+.paw-admin-enquiry-summary {
+  min-width: 0;
+  flex: 1;
+}
+
+.paw-admin-enquiry-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.paw-admin-enquiry-title-row h3 {
+  margin: 0;
+  color: var(--admin-ink);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.paw-admin-pet-description {
+  margin: 7px 0 12px;
+  color: #9694a7;
+  font-size: 11px;
+}
+
+.paw-admin-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.paw-admin-status > span {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.paw-admin-status.new {
+  color: #b27a20;
+  background: #fff4dc;
+}
+
+.paw-admin-status.contacted {
+  color: #3a71b8;
+  background: #eaf3ff;
+}
+
+.paw-admin-status.closed {
+  color: #27865b;
+  background: #e6f8ed;
+}
+
+.paw-admin-applicant-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px 17px;
+}
+
+.paw-admin-applicant-info > span {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #858398;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.paw-admin-applicant-info svg {
+  flex: 0 0 auto;
+  color: #aaa8bb;
+}
+
+.paw-admin-enquiry-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 11px;
+}
+
+.paw-admin-view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid #e6e1f9;
+  border-radius: 8px;
+  color: var(--admin-purple-dark);
+  background: #ffffff;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.paw-admin-view-button:hover {
+  background: #f7f4ff;
+}
+
+.paw-admin-status-editor {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.paw-admin-status-editor select {
+  max-width: 110px;
+  height: 33px;
+  padding: 0 8px;
+  border: 1px solid #e8e6f0;
+  border-radius: 7px;
+  outline: none;
+  color: #626077;
+  background: #ffffff;
+  font-size: 10px;
+}
+
+.paw-admin-status-editor select:focus {
+  border-color: #9a85e8;
+}
+
+.paw-admin-save-status {
+  min-width: 61px;
+  height: 33px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: var(--admin-purple);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.paw-admin-save-status:hover:not(:disabled) {
+  background: var(--admin-purple-dark);
+}
+
+/* ========================================
+   LOADING AND EMPTY STATES
+======================================== */
+
+.paw-admin-loading,
+.paw-admin-empty {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.paw-admin-loading {
+  gap: 12px;
+  color: var(--admin-purple);
+}
+
+.paw-admin-loading strong {
+  color: #39374f;
+  font-size: 13px;
+}
+
+.paw-admin-loading span {
+  color: #9290a5;
+  font-size: 11px;
+}
+
+.paw-admin-empty-icon {
+  width: 67px;
+  height: 67px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 17px;
+  border-radius: 21px;
+  color: var(--admin-purple);
+  background: var(--admin-purple-light);
+}
+
+.paw-admin-empty h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.paw-admin-empty p {
+  max-width: 340px;
+  margin: 10px 0 20px;
+  color: var(--admin-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.paw-admin-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px 25px;
+  border-top: 1px solid #f0eff5;
+  color: var(--admin-muted);
+  font-size: 11px;
+}
+
+.paw-admin-pagination > div {
+  display: flex;
+  gap: 8px;
+}
+
+.paw-admin-pagination button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e8e6f0;
+  border-radius: 8px;
+  color: #77758c;
+  background: #ffffff;
+}
+
+.paw-admin-pagination button:hover:not(:disabled) {
+  color: var(--admin-purple);
+  border-color: #cfc4fb;
+}
+
+.paw-admin-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 23px 0 5px;
+  color: #9997aa;
+  font-size: 10px;
+}
+
+.paw-admin-footer span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ========================================
+   DETAILS MODAL
+======================================== */
+
+.paw-admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(29, 26, 47, 0.53);
+  backdrop-filter: blur(5px);
+}
+
+.paw-admin-modal {
+  width: min(690px, 100%);
+  max-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 19px;
+  background: #ffffff;
+  box-shadow: 0 25px 100px rgba(20, 16, 45, 0.25);
+  animation: paw-admin-modal-enter 0.18s ease-out;
+}
+
+@keyframes paw-admin-modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.paw-admin-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 23px 24px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.paw-admin-modal-pet-icon {
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  display: grid;
+  place-items: center;
+  color: var(--admin-purple);
+  background: var(--admin-purple-light);
+  border-radius: 14px;
+}
+
+.paw-admin-modal-header > div:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.paw-admin-modal-header > div:nth-child(2) > span {
+  color: var(--admin-purple);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.3px;
+}
+
+.paw-admin-modal-header h2 {
+  margin: 5px 0 0;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.paw-admin-modal-close {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #eceaf3;
+  border-radius: 10px;
+  color: #77758b;
+  background: #ffffff;
+}
+
+.paw-admin-modal-close:hover {
+  color: #4f3ba1;
+  background: #f7f4ff;
+}
+
+.paw-admin-modal-body {
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.paw-admin-modal-section-title {
+  margin-bottom: 15px;
+  color: #77758c;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.paw-admin-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 25px;
+}
+
+.paw-admin-detail-item {
+  min-width: 0;
+}
+
+.paw-admin-detail-item > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 7px;
+  color: #9694a8;
+  font-size: 10px;
+}
+
+.paw-admin-detail-item > strong {
+  display: block;
+  color: #39374f;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.paw-admin-modal-divider {
+  height: 1px;
+  margin: 23px 0;
+  background: #efedf5;
+}
+
+.paw-admin-message-heading {
+  margin-top: 20px;
+}
+
+.paw-admin-message-box {
+  padding: 14px;
+  border: 1px solid #efedf7;
+  border-radius: 11px;
+  color: #69677c;
+  background: #faf9fe;
+  font-size: 11px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.paw-admin-modal-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #efedf5;
+}
+
+.paw-admin-modal-status > span:first-child {
+  color: #858399;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.paw-admin-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  border-top: 1px solid var(--admin-border);
+}
+
+.paw-admin-modal-done {
+  min-height: 39px;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 9px;
+  color: #ffffff;
+  background: var(--admin-purple);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.paw-admin-modal-done:hover {
+  background: var(--admin-purple-dark);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1250px) {
+  .paw-admin-content {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .paw-admin-topbar {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .paw-admin-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .paw-admin-sidebar {
+    width: 210px;
+    flex-basis: 210px;
+  }
+
+  .paw-admin-enquiry-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .paw-admin-enquiry-actions {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .paw-admin-filters {
+    flex-wrap: wrap;
+  }
+
+  .paw-admin-search {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .paw-admin-page {
+    display: block;
+  }
+
+  .paw-admin-sidebar {
+    width: 100%;
+    min-height: 0;
+    position: relative;
+    padding: 13px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--admin-border);
+  }
+
+  .paw-admin-brand {
+    padding: 0;
+  }
+
+  .paw-admin-brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .paw-admin-brand strong {
+    font-size: 19px;
+  }
+
+  .paw-admin-sidebar-label,
+  .paw-admin-sidebar-divider,
+  .paw-admin-sidebar-link,
+  .paw-admin-sidebar-bottom {
+    display: none;
+  }
+
+  .paw-admin-topbar {
+    height: 55px;
+    padding: 0 17px;
+  }
+
+  .paw-admin-breadcrumb {
+    font-size: 10px;
+  }
+
+  .paw-admin-secure-label {
+    display: none;
+  }
+
+  .paw-admin-avatar {
+    width: 33px;
+    height: 33px;
+  }
+
+  .paw-admin-content {
+    padding: 25px 14px 18px;
+  }
+
+  .paw-admin-page-heading {
+    align-items: flex-start;
+  }
+
+  .paw-admin-page-heading h1 {
+    font-size: 26px;
+  }
+
+  .paw-admin-page-heading p {
+    font-size: 11px;
+  }
+
+  .paw-admin-refresh-button {
+    min-width: 42px;
+    padding: 0 10px;
+    font-size: 0;
+  }
+
+  .paw-admin-refresh-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .paw-admin-stats-grid {
+    gap: 10px;
+  }
+
+  .paw-admin-stat-card {
+    gap: 10px;
+    padding: 15px 11px;
+    border-radius: 12px;
+  }
+
+  .paw-admin-stat-icon {
+    width: 35px;
+    height: 35px;
+    flex-basis: 35px;
+    border-radius: 10px;
+  }
+
+  .paw-admin-stat-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .paw-admin-stat-info > span {
+    font-size: 10px;
+  }
+
+  .paw-admin-stat-info > strong {
+    font-size: 23px;
+  }
+
+  .paw-admin-stat-info > small {
+    font-size: 9px;
+  }
+
+  .paw-admin-panel-heading {
+    min-height: 0;
+    align-items: flex-start;
+    padding: 18px 15px;
+  }
+
+  .paw-admin-panel-heading h2 {
+    font-size: 14px;
+  }
+
+  .paw-admin-panel-heading p {
+    font-size: 10px;
+  }
+
+  .paw-admin-filters {
+    padding: 0 15px 17px;
+  }
+
+  .paw-admin-filters select {
+    max-width: none;
+    flex: 1 1 120px;
+  }
+
+  .paw-admin-search-button,
+  .paw-admin-clear-button {
+    flex: 1;
+    padding: 0 9px;
+  }
+
+  .paw-admin-enquiry-card {
+    gap: 15px;
+    padding: 18px 14px;
+  }
+
+  .paw-admin-enquiry-main {
+    gap: 10px;
+  }
+
+  .paw-admin-pet-icon {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+    border-radius: 11px;
+  }
+
+  .paw-admin-pet-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .paw-admin-enquiry-title-row h3 {
+    font-size: 12px;
+  }
+
+  .paw-admin-status {
+    font-size: 9px;
+  }
+
+  .paw-admin-pet-description {
+    line-height: 1.6;
+  }
+
+  .paw-admin-applicant-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .paw-admin-applicant-info > span {
+    font-size: 10px;
+  }
+
+  .paw-admin-enquiry-actions {
+    gap: 8px;
+  }
+
+  .paw-admin-status-editor {
+    flex-wrap: wrap;
+  }
+
+  .paw-admin-pagination {
+    padding: 14px;
+  }
+
+  .paw-admin-footer {
+    font-size: 9px;
+  }
+
+  .paw-admin-modal-overlay {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .paw-admin-modal {
+    max-height: calc(100vh - 20px);
+    border-radius: 15px;
+  }
+
+  .paw-admin-modal-header {
+    padding: 16px;
+  }
+
+  .paw-admin-modal-header h2 {
+    font-size: 18px;
+  }
+
+  .paw-admin-modal-body {
+    padding: 19px 16px;
+  }
+
+  .paw-admin-detail-grid {
+    gap: 17px 12px;
+  }
+
+  .paw-admin-detail-item > strong {
+    font-size: 11px;
+  }
+
+  .paw-admin-modal-footer {
+    padding: 13px 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .paw-admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paw-admin-stat-card {
+    align-items: center;
+  }
+
+  .paw-admin-stat-info > strong {
+    margin: 3px 0;
+  }
+
+  .paw-admin-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
